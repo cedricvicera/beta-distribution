@@ -28,5 +28,3 @@ The app runs on Streamlit Cloud. Use the sidebar controls to adjust parameters a
 - plotly
 
 ---
-
-*Interactive statistical visualization of the Beta distribution*
