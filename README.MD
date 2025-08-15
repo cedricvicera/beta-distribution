@@ -18,14 +18,6 @@ The Beta distribution is a continuous probability distribution defined on [0,1] 
 
 The app runs on Streamlit Cloud. Use the sidebar controls to adjust parameters and watch the visualizations update in real-time.
 
-## Key Applications
-
-- Bayesian statistics (conjugate prior for binomial)
-- A/B testing and conversion rate analysis  
-- Project management (PERT distributions)
-- Quality control and proportion modeling
-- Risk analysis in finance
-
 ## Dependencies
 
 - streamlit
