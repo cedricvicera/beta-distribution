@@ -215,38 +215,6 @@ with col3:
     - **Machine Learning**: Probability calibration
     """)
 
-# Interactive exploration section
-st.markdown("---")
-st.header("🔍 Interactive Exploration")
-
-# Common parameter combinations
-st.subheader("Try These Interesting Cases:")
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    if st.button("Uniform (1,1)"):
-        st.session_state.alpha = 1.0
-        st.session_state.beta = 1.0
-        st.rerun()
-
-with col2:
-    if st.button("U-Shape (0.5,0.5)"):
-        st.session_state.alpha = 0.5
-        st.session_state.beta = 0.5
-        st.rerun()
-
-with col3:
-    if st.button("Right Skewed (2,5)"):
-        st.session_state.alpha = 2.0
-        st.session_state.beta = 5.0
-        st.rerun()
-
-with col4:
-    if st.button("Left Skewed (5,2)"):
-        st.session_state.alpha = 5.0
-        st.session_state.beta = 2.0
-        st.rerun()
-
 # Statistical tests
 st.markdown("---")
 st.header("📋 Statistical Tests")
