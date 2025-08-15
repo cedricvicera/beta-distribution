@@ -131,25 +131,25 @@ with col1:
     col1_btn, col2_btn, col3_btn, col4_btn = st.columns(4)
 
     with col1_btn:
-        if st.button("Uniform (1,1)"):
+        if st.button("Uniform (1,1)", key="uniform_btn"):
             st.session_state.alpha = 1.0
             st.session_state.beta = 1.0
             st.rerun()
 
     with col2_btn:
-        if st.button("U-Shape (0.5,0.5)"):
+        if st.button("U-Shape (0.5,0.5)", key="ushape_btn"):
             st.session_state.alpha = 0.5
             st.session_state.beta = 0.5
             st.rerun()
 
     with col3_btn:
-        if st.button("Right Skewed (2,5)"):
+        if st.button("Right Skewed (2,5)", key="right_skew_btn"):
             st.session_state.alpha = 2.0
             st.session_state.beta = 5.0
             st.rerun()
 
     with col4_btn:
-        if st.button("Left Skewed (5,2)"):
+        if st.button("Left Skewed (5,2)", key="left_skew_btn"):
             st.session_state.alpha = 5.0
             st.session_state.beta = 2.0
             st.rerun()
