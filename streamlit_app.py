@@ -20,10 +20,20 @@ The **Beta distribution** is a continuous probability distribution defined on th
 It's extremely versatile and appears in many applications including Bayesian statistics, project management, and modeling proportions.
 """)
 
+# Initialize session state
+if 'alpha' not in st.session_state:
+    st.session_state.alpha = 2.0
+if 'beta' not in st.session_state:
+    st.session_state.beta = 5.0
+
 # Sidebar for parameters
 st.sidebar.header("Distribution Parameters")
-alpha = st.sidebar.slider("α (Alpha)", min_value=0.1, max_value=10.0, value=2.0, step=0.1)
-beta = st.sidebar.slider("β (Beta)", min_value=0.1, max_value=10.0, value=5.0, step=0.1)
+alpha = st.sidebar.slider("α (Alpha)", min_value=0.1, max_value=10.0, value=st.session_state.alpha, step=0.1, key="alpha_slider")
+beta = st.sidebar.slider("β (Beta)", min_value=0.1, max_value=10.0, value=st.session_state.beta, step=0.1, key="beta_slider")
+
+# Update session state when sliders change
+st.session_state.alpha = alpha
+st.session_state.beta = beta
 
 # Sample size for simulation
 sample_size = st.sidebar.slider("Sample Size", min_value=100, max_value=10000, value=1000, step=100)
@@ -187,23 +197,27 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     if st.button("Uniform (1,1)"):
-        st.query_params.alpha = 1.0
-        st.query_params.beta = 1.0
+        st.session_state.alpha = 1.0
+        st.session_state.beta = 1.0
+        st.rerun()
 
 with col2:
     if st.button("U-Shape (0.5,0.5)"):
-        st.query_params.alpha = 0.5
-        st.query_params.beta = 0.5
+        st.session_state.alpha = 0.5
+        st.session_state.beta = 0.5
+        st.rerun()
 
 with col3:
     if st.button("Right Skewed (2,5)"):
-        st.query_params.alpha = 2.0
-        st.query_params.beta = 5.0
+        st.session_state.alpha = 2.0
+        st.session_state.beta = 5.0
+        st.rerun()
 
 with col4:
     if st.button("Left Skewed (5,2)"):
-        st.query_params.alpha = 5.0
-        st.query_params.beta = 2.0
+        st.session_state.alpha = 5.0
+        st.session_state.beta = 2.0
+        st.rerun()
 
 # Statistical tests
 st.markdown("---")
