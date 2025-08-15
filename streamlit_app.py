@@ -187,19 +187,23 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     if st.button("Uniform (1,1)"):
-        st.experimental_set_query_params(alpha=1.0, beta=1.0)
+        st.query_params.alpha = 1.0
+        st.query_params.beta = 1.0
 
 with col2:
     if st.button("U-Shape (0.5,0.5)"):
-        st.experimental_set_query_params(alpha=0.5, beta=0.5)
+        st.query_params.alpha = 0.5
+        st.query_params.beta = 0.5
 
 with col3:
     if st.button("Right Skewed (2,5)"):
-        st.experimental_set_query_params(alpha=2.0, beta=5.0)
+        st.query_params.alpha = 2.0
+        st.query_params.beta = 5.0
 
 with col4:
     if st.button("Left Skewed (5,2)"):
-        st.experimental_set_query_params(alpha=5.0, beta=2.0)
+        st.query_params.alpha = 5.0
+        st.query_params.beta = 2.0
 
 # Statistical tests
 st.markdown("---")
