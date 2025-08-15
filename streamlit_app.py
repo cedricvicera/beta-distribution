@@ -125,6 +125,34 @@ with col1:
     fig.update_yaxes(title_text="Sample Quantiles", row=2, col=2)
     
     st.plotly_chart(fig, use_container_width=True)
+    
+    # Interactive exploration buttons - right under the visualizations
+    st.subheader("🔍 Try These Interesting Cases:")
+    col1_btn, col2_btn, col3_btn, col4_btn = st.columns(4)
+
+    with col1_btn:
+        if st.button("Uniform (1,1)"):
+            st.session_state.alpha = 1.0
+            st.session_state.beta = 1.0
+            st.rerun()
+
+    with col2_btn:
+        if st.button("U-Shape (0.5,0.5)"):
+            st.session_state.alpha = 0.5
+            st.session_state.beta = 0.5
+            st.rerun()
+
+    with col3_btn:
+        if st.button("Right Skewed (2,5)"):
+            st.session_state.alpha = 2.0
+            st.session_state.beta = 5.0
+            st.rerun()
+
+    with col4_btn:
+        if st.button("Left Skewed (5,2)"):
+            st.session_state.alpha = 5.0
+            st.session_state.beta = 2.0
+            st.rerun()
 
 with col2:
     st.subheader("📈 Statistical Properties")
